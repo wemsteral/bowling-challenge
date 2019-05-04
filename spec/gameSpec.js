@@ -33,7 +33,7 @@ describe("game", function() {
   });
 
   it("can roll a perfect game", function() {
-    rollMany(10, 12);
+    rollMany(10, 20);
     expect(game.score()).toBe(300);
   });
 
