@@ -28,6 +28,11 @@ describe("game", function() {
     expect(game.score()).toBe(26);
   });
 
+  it("can roll a perfect game", function() {
+    rollMany(10, 0, 12);
+    expect(game.score()).toBe(300);
+  });
+
   var rollMany = function(pins1, pins2, rolls) {
     for (var i = 0; i < rolls; i++) {
       game.rollFrame(pins1, pins2);
