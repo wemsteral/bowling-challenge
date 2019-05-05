@@ -6,16 +6,10 @@ describe("game", function() {
     game = new Game();
   });
 
-  describe("roll", function() {
-    it("pushes pins to rolls array", function() {
-      game.roll(1);
-      game.roll(2);
-      game.roll(3);
-      expect(game.rolls).toEqual([1, 2, 3]);
+  describe("rollFrame", function() {
+    it("pushes completed frame to frames array", function() {
+      game.rollFrame(1, 1);
+      expect(game.frames).toEqual([[1, 1]]);
     });
-  });
-
-  describe("score", function() {
-    it("");
   });
 });

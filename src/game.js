@@ -9,13 +9,18 @@ Game.prototype.rollFrame = function(pins1, pins2 = 0) {
 Game.prototype.score = function() {
   var totalScore = 0;
 
-  var game = this;
-
-  for (var frameIndex = 0; frameIndex < 10; frameIndex++) {
-    if (this.frames[frameIndex]) {
+  for (var frameIndex = 0; frameIndex < this.frames.length; frameIndex++)
+    if (
+      this.frames[frameIndex][0] + this.frames[frameIndex][1] === 10 &&
+      this.frames[frameIndex + 1]
+    ) {
+      totalScore +=
+        this.frames[frameIndex][0] +
+        this.frames[frameIndex][1] +
+        this.frames[frameIndex + 1][0];
+    } else if (this.frames[frameIndex]) {
       totalScore += this.frames[frameIndex][0] + this.frames[frameIndex][1];
     }
-  }
   return totalScore;
 };
 
